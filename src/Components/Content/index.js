@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRProject } from "react-icons/fa";
 import styled from "styled-components"
 import Text from "../../Components/Text";
+import Footer from "../Footer";
 import { Users } from "./data";
 
 const Content = () => {
+    const [toogle, setToogle] = useState()
+
+
+
     return (
         <ContentWrapper>
             <Text></Text>
@@ -13,10 +18,10 @@ const Content = () => {
 
                     {Users.map(item => {
                         return (<tr>
-                            <th><img src={item.icon} /></th>
+                            <th className="first-col"><img src={item.icon} /></th>
                             <th><p>{item.label} <br /> {item.subLabel} <br />{item.info}</p></th>
                             <th><h4></h4></th>
-                            <th className="last-col"><button>{item.followed ? "following" : "follow"}</button></th>
+                            <th className="last-col"><button >{toogle ? "following" : "follow"}</button></th>
                         </tr>
                         )
                     }
@@ -27,6 +32,7 @@ const Content = () => {
 
 
             </TableWrapper>
+            <Footer></Footer>
         </ContentWrapper>
     )
 }
@@ -59,7 +65,7 @@ const TableWrapper = styled.div`
 
     img{
         padding: 1rem 1rem; 
-        height: 3rem;
+        height: 2.5rem;
         border-radius: 3rem;
     }
 
@@ -68,12 +74,25 @@ const TableWrapper = styled.div`
         text-align: left;
         font-weight: 300;
     }
+
+    .first-col{
+        width: 3rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
     .last-col{
         text-align: right;
         align-self: right;
         padding-right: 1rem;
         margin-right: 1rem;
     }
+
+    .get-started{
+        width: 100%;
+        padding: 1rem 1rem;
+        text-align: center;
+    }
+
     button{
         padding: 0.5rem;
         width: 6rem;
