@@ -21,7 +21,6 @@ const Footer = () => {
                 <p className="sec-p">© 2021 Instagram from Facebook</p>
             </div>
         </HeadWrapper>
-
     )
 }
 

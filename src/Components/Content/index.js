@@ -4,33 +4,26 @@ import styled from "styled-components"
 import Text from "../../Components/Text";
 import Footer from "../Footer";
 import { Users } from "./data";
+import Font from "react-font"
 
 const Content = () => {
-    const [toogle, setToogle] = useState()
-
-
 
     return (
         <ContentWrapper>
             <Text></Text>
             <TableWrapper>
                 <table>
-
                     {Users.map(item => {
                         return (<tr>
                             <th className="first-col"><img src={item.icon} /></th>
                             <th><p>{item.label} <br /> {item.subLabel} <br />{item.info}</p></th>
                             <th><h4></h4></th>
-                            <th className="last-col"><button >{toogle ? "following" : "follow"}</button></th>
+                            <th className="last-col"><button >{item.followed ? "following" : "follow"}</button></th>
                         </tr>
                         )
                     }
-
                     )}
-
                 </table>
-
-
             </TableWrapper>
             <Footer></Footer>
         </ContentWrapper>
@@ -58,41 +51,35 @@ const TableWrapper = styled.div`
     table{
         width: 100%;
     }
-
     p{
         color: black;
     }
-
     img{
         padding: 1rem 1rem; 
         height: 2.5rem;
         border-radius: 3rem;
     }
-
     th{
         font-size: 0.9rem;
         text-align: left;
         font-weight: 300;
     }
-
     .first-col{
         width: 3rem;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: ;
     }
-
     .last-col{
         text-align: right;
         align-self: right;
         padding-right: 1rem;
         margin-right: 1rem;
     }
-
     .get-started{
         width: 100%;
         padding: 1rem 1rem;
         text-align: center;
     }
-
     button{
         padding: 0.5rem;
         width: 6rem;
