@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { GrFormDown } from "react-icons/gr"
 
 const Footer = () => {
     return (
@@ -17,7 +18,7 @@ const Footer = () => {
                 <div>Locations</div>
             </FooterWrapper>
             <div className="last-data">
-                <p>English </p>
+                <p>English <GrFormDown style={{ height: "1rem" }} /> </p>
                 <p className="sec-p">© 2021 Instagram from Facebook</p>
             </div>
         </HeadWrapper>

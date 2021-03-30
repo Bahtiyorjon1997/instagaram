@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import { TiHome } from "react-icons/ti"
 import { RiMessengerLine } from "react-icons/ri"
@@ -7,6 +7,7 @@ import { AiOutlineHeart } from "react-icons/ai"
 
 
 const Header = () => {
+    const [value, setValue] = useState("Search")
     return (
         <HeaderWrapper>
             <HeaderInnerWrapper>
@@ -14,7 +15,7 @@ const Header = () => {
                     <img src="https://lahomeconstruction.com/wp-content/uploads/2020/12/insta.jpg" alt="instagtam" />
                 </div>
                 <div className="input__field">
-                    <input type="text" placeholder="Search" />
+                    <input style={value !== "" ? { textAlign: "center" } : { textAlign: "left" }} type="text" placeholder="Search" onClick={() => setValue("")} />
                 </div>
                 <div className="icons">
                     <div className="icon-1">
@@ -45,7 +46,10 @@ const HeaderWrapper = styled.div`
     background-color: #faf8f4;
     background: #faf8f4;
     border-bottom: 1px solid #dbd9d5;
+    width: 100%;
+    position: -webkit-sticky; /* Safari */
     position: sticky;
+    top: 0;
     
     .app_headerImg{
         padding: 0;
@@ -69,6 +73,7 @@ const HeaderWrapper = styled.div`
         height: 1.5rem;
         border: 0.5 solid rgba(197, 195, 191, 0.493);
         cursor: pointer;
+        opacity: 0.5;
     }
     
     img{

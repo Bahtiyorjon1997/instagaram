@@ -12,7 +12,7 @@ function App() {
       {/* Header */}
       <Header></Header>
       {/* Posts */}
-      
+
       <Content></Content>
       {/* Posts */}
     </Wrapper>
@@ -21,7 +21,14 @@ function App() {
 
 export default App;
 
-const Wrapper = styled.div` 
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  background-color: rgb(250, 243, 243);    
   *{
     margin: 0;
   }

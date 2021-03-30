@@ -12,10 +12,9 @@ const Text = () => {
 export default Text;
 
 const TextWrapper = styled.div`
-    margin: 0;
-    padding: 1rem 1rem;
-    width: calc(100% - 80rem);
-    margin-left: 40rem !important;
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 100%;
     font-size: 0.7rem;
     font-weight: light;
     font-family: 'Nunito', sans-serif;
